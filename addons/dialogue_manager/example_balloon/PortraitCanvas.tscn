@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://asset/shader/jitterfree.tres" type="Material" id=1]
+[ext_resource path="res://addons/dialogue_manager/example_balloon/PortraitCanvas.gd" type="Script" id=2]
+[ext_resource path="res://asset/sprite/DOUX.png" type="Texture" id=3]
+[ext_resource path="res://asset/gui_paper.png" type="Texture" id=4]
+[ext_resource path="res://asset/shader/jitterfree_light.tres" type="Material" id=5]
+
+[sub_resource type="StyleBoxTexture" id=1]
+resource_local_to_scene = true
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 24, 24 )
+
+[node name="PotraitCanvas" type="CanvasLayer"]
+layer = 127
+script = ExtResource( 2 )
+
+[node name="MarginContainer" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Balloon2" type="NinePatchRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+material = ExtResource( 1 )
+margin_right = 31.0
+margin_bottom = 36.0
+rect_scale = Vector2( 4, 4 )
+focus_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+region_rect = Rect2( 31, 31, 98, 98 )
+patch_margin_left = 14
+patch_margin_top = 16
+patch_margin_right = 17
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Potrait" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+material = ExtResource( 5 )
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 4, 4 )
+mouse_filter = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 1 )
